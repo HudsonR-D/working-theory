@@ -6,8 +6,7 @@
   "type": "module",
   "license": "MIT",
   "scripts": {
-    "test": "node --test --experimental-strip-types core/*.test.ts adapters/*.test.ts evals/run.test.ts web/site.test.ts",
-    "eval": "node --experimental-strip-types evals/run.test.ts"
+    "test": "node --test --experimental-strip-types core/*.test.ts adapters/*.test.ts web/site.test.ts"
   },
   "engines": {
     "node": ">=22"

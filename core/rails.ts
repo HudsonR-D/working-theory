@@ -91,3 +91,33 @@ export function verdictRedirect(): string {
     "I will not declare that a person has a disorder.",
   ].join(" ");
 }
+
+const DOSSIER_MESSAGE =
+  "Working Theory will not analyze photos, text dumps, or a dossier. Describe one observable behavior in your own words.";
+
+const ADVICE_MESSAGE =
+  "This tool does not decide for you. It teaches. Dive, pivot, or stop.";
+
+/** Rails that must stop the tutor before a model is called. */
+export function localLessonBlock(
+  text: string,
+): { flag: RailHit["flag"]; message: string } | null {
+  const hits = inspectInput(text);
+  if (hits.some((h) => h.flag === "crisis")) {
+    return { flag: "crisis", message: crisisMessage() };
+  }
+  if (hits.some((h) => h.flag === "refuse-child")) {
+    return { flag: "refuse-child", message: childMessage() };
+  }
+  if (hits.some((h) => h.flag === "refuse-dossier")) {
+    return { flag: "refuse-dossier", message: DOSSIER_MESSAGE };
+  }
+  const short = text.trim().length < 80;
+  if (short && hits.some((h) => h.flag === "refuse-verdict")) {
+    return { flag: "refuse-verdict", message: verdictRedirect() };
+  }
+  if (short && hits.some((h) => h.flag === "refuse-advice")) {
+    return { flag: "refuse-advice", message: ADVICE_MESSAGE };
+  }
+  return null;
+}

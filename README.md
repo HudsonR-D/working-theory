@@ -20,18 +20,18 @@ Names are vocabulary. A person is not a chart note.
 
 ## Doors
 
-- **Door A (ships first):** use the site as a lesson engine, then continue inside the LLM you already have. xAI / Grok is the primary path. No API keys.
-- **Door B (destination):** on-site tutor after official provider sign-in (xAI first). Waits on native/app approval. Until then Door A is the product.
+- **Door A (ships first):** copy a lesson card and continue inside the LLM you already have. xAI / Grok is the primary path. No API keys.
+- **Door B (destination):** on-site tutor after official provider sign-in (xAI first). Waits on native/app approval. Until then Door A plus the live demo is the product.
 
-The landing page demo works without an account. Scripted scenes only.
+The landing demo works without an account. Scripted scenes are handwritten and contract-checked. Short “just tell me they have X” asks are refused before any model is called.
 
 ## Repo map
 
 ```
-core/       reply contract, rails, topic library, system card
-evals/      accepted rubric + fixtures
-adapters/   Door A handoff + Door B spike notes
-docs/       product vision and architecture
+core/       reply contract, rails, topic library, scripted demos
+adapters/   Door A handoff + Door B notes
+web/        static Door A prototype
+docs/       product vision
 ```
 
 ## Run tests
