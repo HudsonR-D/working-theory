@@ -14,6 +14,15 @@ export const RELATIONSHIPS = [
 
 export type Relationship = (typeof RELATIONSHIPS)[number];
 
+export const RELATIONSHIP_LABELS: Record<Relationship, string> = {
+  partner: "Partner",
+  family: "Family",
+  work: "Work",
+  friend: "Friend",
+  self: "Myself",
+  unspecified: "Someone I know",
+};
+
 export const FLAGS = [
   "ok",
   "crisis",
