@@ -1,0 +1,15 @@
+{
+  "name": "working-theory",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Psychology translator for civilians. Education, not diagnosis.",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test --experimental-strip-types core/*.test.ts adapters/*.test.ts evals/run.test.ts",
+    "eval": "node --experimental-strip-types evals/run.test.ts"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
