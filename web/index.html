@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Working Theory — a psychology translator</title>
+  <meta name="description" content="Education, not diagnosis. Learn possible names for a behavior, why those names exist, and what else it could be." />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="site">
+      <a class="mark" href="./index.html">Working Theory</a>
+      <nav>
+        <a href="./index.html" aria-current="page">Demo</a>
+        <a href="./learn.html">Library</a>
+        <a href="./connect.html">Use Grok</a>
+      </nav>
+    </header>
+    <h1>Understand the scene. Do not stamp the person.</h1>
+    <p class="lede">A psychology translator for ordinary people. You describe a behavior — yours, theirs, or “someone I know.” You leave with more than one working theory, and at least one explanation that is not a disorder.</p>
+    <ul class="rules">
+      <li>Names are vocabulary</li>
+      <li>Not a diagnosis</li>
+      <li>Not therapy</li>
+      <li>Not a jury</li>
+    </ul>
+    <div class="grid">
+      <div>
+        <section class="panel">
+          <h2>Scripted demo</h2>
+          <p class="sources">No account. These answers were written by hand and checked against the contract.</p>
+          <div id="scenes" class="scenes"></div>
+          <button class="primary" id="copy-handoff" type="button">Copy lesson card for Grok</button>
+          <button class="ghost" id="open-grok" type="button">Open grok.com</button>
+        </section>
+        <section class="panel" style="margin-top:1rem">
+          <h2>Your own scene</h2>
+          <p class="sources">This page will not invent a lesson. If the rails pass, it copies a tutor card and opens Grok.</p>
+          <form id="own">
+            <label class="tiny" for="scene">What happened</label>
+            <textarea id="scene" name="scene" placeholder="They cancelled twice and got short when I asked why."></textarea>
+            <label class="tiny" for="relationship">Relationship filter</label>
+            <select id="relationship" name="relationship">
+              <option value="unspecified">Unspecified</option>
+              <option value="family">Family</option>
+              <option value="partner">Partner</option>
+              <option value="friend">Friend</option>
+              <option value="work">Work</option>
+              <option value="self">Self</option>
+            </select>
+            <button class="primary" type="submit">Copy card and open Grok</button>
+          </form>
+          <div class="rail" id="rail" hidden></div>
+        </section>
+      </div>
+      <section class="panel" aria-live="polite">
+        <h2>Lesson</h2>
+        <div id="out"></div>
+      </section>
+    </div>
+    <p class="fine">Working Theory is open-source education from HudsonR&amp;D. Not a medical device. Danger: emergency services or 988 in the US. <a href="./connect.html">Use this with Grok</a>.</p>
+  </div>
+  <script src="./app.js"></script>
+</body>
+</html>
